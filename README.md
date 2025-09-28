@@ -1,8 +1,8 @@
-# 🚀 Envoyou - Global Environmental Data API Landing Page
+# 🚀 Envoyou SEC API Landing Page
 
-A modern, high-performance React landing page for the Envoyou environmental data verification API, built with Vite and optimized for production with **full FastAPI backend integration**.
+A modern, high-performance React landing page for the Envoyou SEC Climate Disclosure compliance API, built with Vite and optimized for production with **full FastAPI backend integration**.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![License](https://img.shields.io/badge/license-BSL--1.1-blue.svg)
 ![React](https://img.shields.io/badge/React-19-blue.svg)
 ![Vite](https://img.shields.io/badge/Vite-Latest-green.svg)
 ![Tailwind](https://img.shields.io/badge/Tailwind-v4-blue.svg)
@@ -38,9 +38,9 @@ A modern, high-performance React landing page for the Envoyou environmental data
 - **Performance Monitoring** configuration
 
 ### 🌐 **Backend Integration Features**
-- **🔍 CEVS Score Lookup** - Real company environmental scores
-- **📈 Emissions Data** - EPA power plant data with filtering
-- **🌍 Global ISO Certifications** - ISO 14001 environmental certifications
+- **🔍 SEC Emissions Calculator** - Scope 1 & 2 GHG emissions calculation
+- **📈 EPA Cross-Validation** - Automatic comparison against EPA data
+- **🌍 SEC Export Package** - Generate complete SEC filing packages
 - **🎯 Demo API Keys** - Instant access without registration
 - **📡 Connection Status** - Real-time backend monitoring
 - **🔧 API Testing Tools** - Built-in endpoint testing interface
@@ -55,8 +55,8 @@ A modern, high-performance React landing page for the Envoyou environmental data
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/hk-dev13/ENVOYou-page.git
-   cd envoyou-page-react
+   git clone https://github.com/ENVOYou/envoyou-landing.git
+   cd envoyou-landing
    ```
 
 2. **Install dependencies**
@@ -131,9 +131,9 @@ src/
 
 ### API Endpoints Available
 - **Health Check**: `/health` - No authentication required
-- **CEVS Data**: `/global/cevs/{company_name}` - Company environmental scores
-- **Emissions**: `/global/emissions` - EPA power plant emissions data
-- **ISO Certifications**: `/global/iso` - Global ISO 14001 certificates
+- **Emissions Calculate**: `/v1/emissions/calculate` - Scope 1 & 2 emissions calculation
+- **EPA Validation**: `/v1/validation/epa` - Cross-validate against EPA data
+- **SEC Export**: `/v1/export/sec/package` - Generate SEC filing package
 - **Demo Keys**: `/admin/request-demo-key` - Get temporary API access
 
 ### Getting Started with API
@@ -141,26 +141,22 @@ src/
 2. **Click API status button** - Green circle in bottom-right corner
 3. **Get Demo API Key** - Click "Get Demo API Key" button
 4. **Test endpoints** - Use built-in testing interface
-5. **Try CEVS lookup** - Search real company data on homepage
+5. **Try SEC calculator** - Calculate emissions with audit trail
 
 ### API Response Examples
 
-#### CEVS Score Response
+#### SEC Emissions Calculation Response
 ```json
 {
   "status": "success",
-  "company": "Shell",
-  "score": 50.0,
-  "components": {
-    "base": 50.0,
-    "iso_bonus": 0.0,
-    "epa_penalty": 0.0,
-    "renewables_bonus": 0.0
+  "company": "Demo Corp",
+  "emissions": {
+    "scope1_co2e": 53.02,
+    "scope2_co2e": 250.5,
+    "total_co2e": 303.52
   },
-  "sources": {
-    "epa_matches": 0,
-    "iso_count": 40
-  }
+  "audit_trail_id": "audit_123456789",
+  "package_url": "/exports/demo_corp_sec_package.zip"
 }
 ```
 
@@ -192,7 +188,7 @@ Create a `.env` file with:
 
 ```env
 # Backend API Configuration
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=https://api.envoyou.com
 VITE_API_KEY=your_production_api_key
 
 # Analytics
@@ -200,25 +196,25 @@ VITE_GA_TRACKING_ID=G-YOUR-GA4-ID
 
 # App Settings
 VITE_APP_NAME=Envoyou
-VITE_APP_DESCRIPTION=Global Environmental Data API
+VITE_APP_DESCRIPTION=SEC Climate Disclosure Compliance API
 ```
 
 ### Backend Integration
 
 This frontend is designed to work with the FastAPI backend. Make sure:
 
-1. **Backend Running**: FastAPI server at `http://localhost:8000`
+1. **Backend Running**: FastAPI server at `https://api.envoyou.com`
 2. **Demo Endpoint**: `/admin/request-demo-key` available
-3. **CORS Enabled**: Frontend origin `http://localhost:5173` allowed
+3. **CORS Enabled**: Frontend origin allowed
 4. **All Endpoints**: Health, CEVS, Emissions, ISO data available
 
 #### Quick Backend Test
 ```bash
 # Test if backend is running
-curl http://localhost:8000/health
+curl https://api.envoyou.com/health
 
 # Test demo API key endpoint
-curl -X POST http://localhost:8000/admin/request-demo-key \
+curl -X POST https://api.envoyou.com/admin/request-demo-key \
   -H "Content-Type: application/json" \
   -d '{"client_name":"Test User"}'
 ```
@@ -365,25 +361,14 @@ The `dist/` folder contains all files needed for deployment to:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Business Source License 1.1 (BSL-1.1).
 
-### MIT License Summary
+- **Non-commercial use**: Allowed for research, testing, and evaluation
+- **Commercial use**: Requires separate commercial agreement
+- **Change Date**: 2048-01-01 (converts to Apache 2.0)
+- **Commercial licensing**: Contact [husnikusuma00@envoyou.com](mailto:husnikusuma00@envoyou.com)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
-
-**What you can do:**
-- ✅ Commercial use
-- ✅ Modification
-- ✅ Distribution
-- ✅ Private use
-
-**What you must include:**
-- 📄 Copyright notice
-- 📄 License text
-
-**What you cannot do:**
-- ❌ Hold liable
-- ❌ Use trademark
+See the [LICENSE](LICENSE) file for complete terms.
 
 ## � Additional Documentation
 
@@ -396,16 +381,16 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 - **Email**: support@envoyou.com
 - **Website**: https://envoyou.com
 - **GitHub Issues**: For bug reports and feature requests
-- **API Documentation**: Available at `/documentation` or `http://localhost:8000/docs`
+- **API Documentation**: Available at `/documentation` or `https://api.envoyou.com/docs`
 - **Backend Status**: Real-time monitoring via floating status indicator
 
 ## 🎯 Quick Demo
 
-1. **Start backend**: `FastAPI server on http://localhost:8000`
+1. **Start backend**: `FastAPI server at https://api.envoyou.com`
 2. **Start frontend**: `npm run dev`
 3. **Get demo key**: Click green button → "Get Demo API Key"
-4. **Test CEVS lookup**: Search "Shell" or "Tesla" 
-5. **Explore real data**: Company environmental scores with full breakdown
+4. **Test SEC calculator**: Calculate Scope 1 & 2 emissions
+5. **Explore real data**: EPA validation and SEC export packages
 
 ---
 
@@ -416,4 +401,4 @@ Maintained by [Husni Kusuma](https://github.com/hk-dev13)
 
 ---
 > <p style="text-align: center;">© 2025 <a href="https://envoyou.com">Envoyou</a> | All Rights Reserved</p>
-> <p style="text-align: center;">Empowering Global Environmental Transparency</p>
+> <p style="text-align: center;">Empowering SEC Climate Disclosure Compliance</p>
