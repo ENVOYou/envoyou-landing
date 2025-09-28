@@ -39,11 +39,24 @@ A modern, high-performance React landing page for the Envoyou SEC Climate Disclo
 
 ### 🌐 **Backend Integration Features**
 - **🔍 SEC Emissions Calculator** - Scope 1 & 2 GHG emissions calculation
-- **📈 EPA Cross-Validation** - Automatic comparison against EPA data
-- **🌍 SEC Export Package** - Generate complete SEC filing packages
+- **📈 EPA Cross-Validation** - Automatic comparison against EPA data with confidence scoring
+- **🌍 SEC Export Package** - Generate complete SEC filing packages (Excel-ready)
 - **🎯 Demo API Keys** - Instant access without registration
 - **📡 Connection Status** - Real-time backend monitoring
 - **🔧 API Testing Tools** - Built-in endpoint testing interface
+
+## 🎯 **From Zero to Filing-Ready in 5 Steps**
+
+**Traditional Process:** 2-3 weeks of manual work
+**With Envoyou:** 2-3 hours automated workflow
+
+1. **Input:** Company data (fuel, electricity)
+2. **Validate:** Automatic EPA cross-validation with confidence scores
+3. **Review:** Clear deviation flags and recommendations
+4. **Audit:** Immutable trail with source documentation
+5. **Export:** SEC-ready package (JSON/CSV/Excel)
+
+**Result:** Audit-ready filing package with forensic-grade traceability
 
 ## 🚀 Getting Started
 
@@ -150,13 +163,50 @@ src/
 {
   "status": "success",
   "company": "Demo Corp",
-  "emissions": {
-    "scope1_co2e": 53.02,
-    "scope2_co2e": 250.5,
-    "total_co2e": 303.52
+  "totals": {
+    "emissions_kg": 303520.0,
+    "emissions_tonnes": 303.52
   },
-  "audit_trail_id": "audit_123456789",
-  "package_url": "/exports/demo_corp_sec_package.zip"
+  "components": {
+    "scope1_co2e_kg": 53020.0,
+    "scope2_co2e_kg": 250500.0
+  },
+  "confidence_analysis": {
+    "score": 95,
+    "level": "high",
+    "recommendation": "Complete Scope 1 & 2 data - ready for SEC filing"
+  },
+  "audit_trail_id": "audit_123456789"
+}
+```
+
+#### EPA Validation Response
+```json
+{
+  "status": "success",
+  "validation": {
+    "confidence_score": 75,
+    "confidence_level": "medium",
+    "recommendation": "Review recommended before SEC filing",
+    "matches_found": 2,
+    "flags_count": 1
+  },
+  "confidence_analysis": {
+    "score": 75,
+    "level": "medium",
+    "recommendation": "Review recommended before SEC filing"
+  },
+  "epa": {
+    "matches_count": 2,
+    "sample": ["facility_data"]
+  },
+  "flags": [
+    {
+      "code": "low_match_density",
+      "severity": "medium",
+      "message": "Low EPA match density compared to expectations"
+    }
+  ]
 }
 ```
 
