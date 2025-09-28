@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import apiService from '../services/apiService';
 
 const SECCalculatorSection = () => {
     const [formData, setFormData] = useState({
