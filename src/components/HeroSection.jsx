@@ -6,12 +6,12 @@ const HeroSection = () => {
         <section className="relative h-screen flex items-center justify-center hero-gradient" data-aos="fade-in">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                    Transform Fragmented Environmental Data.
+                    SEC Climate Disclosure
                     <br className="hidden md:block" />
-                    <span className="text-emerald-400">Into Verified Insights.</span>
+                    <span className="text-emerald-400">Made Simple.</span>
                 </h2>
                 <p className="mt-6 max-w-3xl mx-auto text-lg text-slate-400">
-                    Unified access to standardized global environmental datasets for ESG businesses, analysts, and investors. Stop time-consuming manual data collection and start making strategic data-driven decisions with confidence.
+                    Auditable Scope 1 & 2 emissions calculation, EPA cross-validation, and SEC-ready filing packages. Meet regulatory requirements with forensic-grade traceability and professional compliance tools.
                 </p>
                 <div className="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <Link to="/v1/auth/register" className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg flex items-center space-x-2">

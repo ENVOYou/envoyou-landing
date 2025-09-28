@@ -50,11 +50,11 @@ const HomePage = () => {
                             <span style={{ color: 'var(--envoyou-green)' }}>Envoy</span>OU
                         </h1>
                         <h2 className="text-2xl sm:text-4xl font-bold mb-6" style={{ color: 'var(--envoyou-white)' }}>
-                            The Standardized Score for Corporate Environmental Performance
+                            SEC Climate Disclosure Compliance Made Simple
                         </h2>
                         <p className="text-xl mb-8 max-w-4xl mx-auto" style={{ color: 'var(--envoyou-gray)' }}>
-                            Envoyou's CEVS API aggregates data from global sources like the EPA and EEA to generate a single,
-                            reliable environmental score from 0-100, enabling transparent ESG assessment and supply chain verification.
+                            Envoyou SEC API provides auditable Scope 1 & 2 emissions calculation, EPA cross-validation, and SEC-ready filing packages.
+                            Meet regulatory requirements with forensic-grade traceability and professional compliance tools.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button
@@ -76,75 +76,78 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* CEVS Calculator Section */}
+            {/* SEC Calculator Section */}
             <section className="py-20" style={{ backgroundColor: 'var(--envoyou-dark-light)' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--envoyou-white)' }}>
-                            See Your CEVS Score in Action
+                            Try SEC Emissions Calculator
                         </h2>
                         <p className="text-lg" style={{ color: 'var(--envoyou-gray)' }}>
-                            Interactive calculator showing how environmental factors impact your company's score
+                            Calculate your Scope 1 & 2 emissions for SEC Climate Disclosure compliance
                         </p>
                     </div>
 
-                    <div className="flex justify-center">
-                        <CevsCalculator />
+                    <div className="max-w-4xl mx-auto bg-slate-800/50 rounded-xl border border-slate-700 p-8">
+                        <div className="text-center">
+                            <h3 className="text-xl font-semibold text-white mb-4">Interactive Demo</h3>
+                            <p className="text-slate-400 mb-6">Experience our SEC compliance tools with real EPA emission factors</p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Button variant="primary" size="lg" onClick={handleGetStarted}>
+                                    Start Free Trial
+                                </Button>
+                                <Button variant="outline" size="lg" onClick={handleViewDocumentation}>
+                                    View API Docs
+                                </Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Data Sources Section */}
+            {/* SEC Compliance Features */}
             <section className="py-20" style={{ backgroundColor: 'var(--envoyou-dark)' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--envoyou-white)' }}>
-                            Trusted Global Data Sources
+                            Complete SEC Compliance Solution
                         </h2>
                         <p className="text-lg" style={{ color: 'var(--envoyou-gray)' }}>
-                            Our CEVS score is calculated using verified data from authoritative environmental agencies worldwide
+                            Everything you need for SEC Climate Disclosure compliance in one API
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div className="text-center p-6 rounded-lg border transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 group" style={{ backgroundColor: 'var(--envoyou-dark-light)', borderColor: 'var(--envoyou-border)' }}>
                             <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: 'var(--envoyou-green)' }}>
                                 <Database />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>EPA</h3>
-                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>United States Environmental Protection Agency</p>
+                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>EPA Factors</h3>
+                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>Official EPA emission factors for accurate calculations</p>
                         </div>
 
                         <div className="text-center p-6 rounded-lg border transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 group" style={{ backgroundColor: 'var(--envoyou-dark-light)', borderColor: 'var(--envoyou-border)' }}>
                             <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: 'var(--envoyou-green)' }}>
-                                <Database />
+                                <CheckCircle />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>EEA</h3>
-                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>European Environment Agency</p>
+                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>Cross-Validation</h3>
+                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>Automatic validation against EPA facility data</p>
                         </div>
 
                         <div className="text-center p-6 rounded-lg border transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 group" style={{ backgroundColor: 'var(--envoyou-dark-light)', borderColor: 'var(--envoyou-border)' }}>
                             <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: 'var(--envoyou-green)' }}>
-                                <Database />
+                                <Shield />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>EDGAR</h3>
-                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>Emissions Database for Global Atmospheric Research</p>
+                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>Audit Trail</h3>
+                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>Forensic-grade documentation for regulatory review</p>
                         </div>
 
                         <div className="text-center p-6 rounded-lg border transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 group" style={{ backgroundColor: 'var(--envoyou-dark-light)', borderColor: 'var(--envoyou-border)' }}>
                             <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: 'var(--envoyou-green)' }}>
-                                <Database />
+                                <TrendingUp />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>ISO</h3>
-                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>International Organization for Standardization</p>
-                        </div>
-
-                        <div className="text-center p-6 rounded-lg border transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20 group" style={{ backgroundColor: 'var(--envoyou-dark-light)', borderColor: 'var(--envoyou-border)' }}>
-                            <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: 'var(--envoyou-green)' }}>
-                                <Database />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>KLHK</h3>
-                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>Ministry of Environment and Forestry Indonesia</p>
+                            <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--envoyou-white)' }}>SEC Export</h3>
+                            <p className="text-sm" style={{ color: 'var(--envoyou-gray)' }}>10-K compliant filing packages ready for submission</p>
                         </div>
                     </div>
                 </div>
