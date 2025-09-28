@@ -47,16 +47,30 @@ A modern, high-performance React landing page for the Envoyou SEC Climate Disclo
 
 ## 🎯 **From Zero to Filing-Ready in 5 Steps**
 
-**Traditional Process:** 2-3 weeks of manual work
+**Traditional Process:** 2-3 weeks of manual work  
 **With Envoyou:** 2-3 hours automated workflow
 
 1. **Input:** Company data (fuel, electricity)
-2. **Validate:** Automatic EPA cross-validation with confidence scores
-3. **Review:** Clear deviation flags and recommendations
+2. **Validate:** Automatic EPA cross-validation with confidence scores (0-100)
+3. **Review:** Clear deviation flags and actionable recommendations
 4. **Audit:** Immutable trail with source documentation
 5. **Export:** SEC-ready package (JSON/CSV/Excel)
 
-**Result:** Audit-ready filing package with forensic-grade traceability
+**Result:** Audit-ready filing package with quantified confidence assessment
+
+## 🎯 **Confidence Scoring System**
+
+**Built for CSOs who need quantified risk assessment:**
+
+- **High Confidence (80-100):** "Data appears reliable for SEC filing"
+- **Medium Confidence (60-79):** "Review recommended before SEC filing"  
+- **Low Confidence (0-59):** "Manual verification required before SEC filing"
+
+**Every calculation includes:**
+- Numerical confidence score (0-100)
+- Risk level assessment (High/Medium/Low)
+- Specific recommendations for next steps
+- EPA deviation analysis with thresholds
 
 ## 🚀 Getting Started
 
@@ -180,7 +194,7 @@ src/
 }
 ```
 
-#### EPA Validation Response
+#### EPA Validation with Confidence Scoring
 ```json
 {
   "status": "success",
@@ -191,11 +205,6 @@ src/
     "matches_found": 2,
     "flags_count": 1
   },
-  "confidence_analysis": {
-    "score": 75,
-    "level": "medium",
-    "recommendation": "Review recommended before SEC filing"
-  },
   "epa": {
     "matches_count": 2,
     "sample": ["facility_data"]
@@ -204,7 +213,7 @@ src/
     {
       "code": "low_match_density",
       "severity": "medium",
-      "message": "Low EPA match density compared to expectations"
+      "message": "Low EPA match density - review recommended"
     }
   ]
 }
