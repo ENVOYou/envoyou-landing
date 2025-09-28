@@ -437,7 +437,8 @@ See the [LICENSE](LICENSE) file for complete terms.
 
 ## �📞 Support
 
-- **Email**: support@envoyou.com
+- **General Support**: hello@envoyou.com
+- **Business Inquiries**: husnikusuma@envoyou.com
 - **Website**: https://envoyou.com
 - **GitHub Issues**: For bug reports and feature requests
 - **API Documentation**: Available at `/documentation` or `https://api.envoyou.com/docs`
@@ -456,7 +457,8 @@ See the [LICENSE](LICENSE) file for complete terms.
 ## Contact
 Maintained by [Husni Kusuma](https://github.com/hk-dev13)  
 🌐 Website: [envoyou.com](https://envoyou.com)  
-📧 More info: [info@envoyou.com](mailto:info@envoyou.com)  
+📧 Business: [husnikusuma@envoyou.com](mailto:husnikusuma@envoyou.com)  
+📧 Support: [hello@envoyou.com](mailto:hello@envoyou.com)  
 
 ---
 > <p style="text-align: center;">© 2025 <a href="https://envoyou.com">Envoyou</a> | All Rights Reserved</p>

@@ -62,9 +62,9 @@ const PricingSection = () => {
                 title: "Support & Service Levels",
                 content: "",
                 subItems: [
-                    "Basic Support (Included with all plans): Access to documentation and community forums. Email support with a 48-hour response time.",
-                    "Premium Support (Included with Premium Plan): Email support with a 24-hour response time. Phone support access for critical issues.",
-                    "Enterprise Support (Included with Enterprise Plan): A dedicated account manager. Guaranteed 99.9% uptime SLA. Phone support with a 4-hour response time for critical issues."
+                    "Basic Support (Free Plan): Access to documentation and GitHub issues. Email support with 48-72 hour response time.",
+                    "Premium Support (Premium Plan): Email support with 24-48 hour response time. Direct founder contact for technical issues.",
+                    "Enterprise Support (Enterprise Plan): Priority email support with 12-24 hour response time. Quarterly consultation calls with founder."
                 ]
             },
             {
@@ -84,12 +84,12 @@ const PricingSection = () => {
                     {
                         type: "email",
                         label: "General Support",
-                        value: "support@envoyou.com"
+                        value: "hello@envoyou.com"
                     },
                     {
                         type: "email",
-                        label: "Enterprise Sales",
-                        value: "info@envoyou.com"
+                        label: "Business Inquiries",
+                        value: "husnikusuma@envoyou.com"
                     },
                     {
                         type: "page",
@@ -183,7 +183,7 @@ const PricingSection = () => {
                         <ul className="mt-8 space-y-4 text-slate-300 flex-grow">
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{pricingData.basic.requests}</li>
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Access to core emissions & country data</li>
-                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Community support</li>
+                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Documentation & GitHub support</li>
                         </ul>
                         <Link to="/free-api-key" className="mt-8 w-full text-center bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-colors block">Get Free API Key</Link>
                     </div>
@@ -223,7 +223,7 @@ const PricingSection = () => {
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>{pricingData.premium.requests}</li>
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>All features from the Basic plan</li>
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Advanced analytics & CEVS scores</li>
-                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Priority email support</li>
+                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Direct email support (24-48h)</li>
                             {isAnnual && (
                                 <li className="flex items-center bg-emerald-500/10 p-2 rounded-lg">
                                     <svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@ const PricingSection = () => {
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Customizable usage limits and rate throttling</li>
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Full historical data access</li>
                             <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Early access to beta features</li>
-                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Service Level Agreement (SLA) & dedicated account manager</li>
+                            <li className="flex items-center"><svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>Priority support & quarterly founder consultations</li>
                         </ul>
                         <Link to="/contact" className="mt-8 w-full text-center bg-slate-700 hover:bg-slate-600 text-white font-semibold py-3 rounded-lg transition-colors block">Contact Sales</Link>
                     </div>
@@ -373,9 +373,9 @@ const PricingSection = () => {
                                 {/* Support Level */}
                                 <tr className="border-b border-slate-800/50">
                                     <td className="py-4 px-6 text-white font-medium">Support</td>
-                                    <td className="py-4 px-6 text-center text-slate-300">Community</td>
-                                    <td className="py-4 px-6 text-center text-emerald-400 font-semibold">Priority Email</td>
-                                    <td className="py-4 px-6 text-center text-emerald-400 font-semibold">Dedicated Manager</td>
+                                    <td className="py-4 px-6 text-center text-slate-300">Documentation</td>
+                                    <td className="py-4 px-6 text-center text-emerald-400 font-semibold">Direct Email</td>
+                                    <td className="py-4 px-6 text-center text-emerald-400 font-semibold">Priority + Calls</td>
                                 </tr>
 
                                 {/* SLA */}
