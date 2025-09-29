@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Envoyou - Global Environmental Data Verification API</title>
-    <meta name="description" content="Unified API access to standardized global environmental datasets for ESG businesses, analysts, and investors. Make data-driven decisions with confidence.">
+  <title>Envoyou SEC API Frontend</title>
+  <meta name="description" content="A modern SaaS frontend for SEC Climate Disclosure compliance built with Next.js 15, TypeScript, and Tailwind CSS. Integrates with Envoyou SEC API for emissions calculation, EPA validation, and SEC export.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.envoyou.com/">
-    <meta property="og:title" content="Envoyou - Global Environmental Data Verification API">
-    <meta property="og:description" content="Unified API access to standardized global environmental datasets for ESG businesses, analysts, and investors.">
+  <meta property="og:title" content="Envoyou SEC API Frontend">
+  <meta property="og:description" content="A modern SaaS frontend for SEC Climate Disclosure compliance built with Next.js 15, TypeScript, and Tailwind CSS. Integrates with Envoyou SEC API for emissions calculation, EPA validation, and SEC export.">
     <meta property="og:image" content="https://www.envoyou.com/public/www.envoyou.com.png">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.envoyou.com/">
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="keywords" content="environmental data, ESG API, climate data, carbon emissions, sustainability API, environmental verification">
-    <meta name="author" content="Envoyou">
+  <meta name="keywords" content="SEC, SEC Climate Disclosure, Next.js, TypeScript, Tailwind CSS, SEC Calculator, EPA Validation, SEC Export, Envoyou">
+  <meta name="author" content="Envoyou - SEC API Frontend">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
@@ -37,8 +37,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.envoyou.com/">
-    <meta property="twitter:title" content="Envoyou - Global Environmental Data Verification API">
-    <meta property="twitter:description" content="Unified API access to standardized global environmental datasets for ESG businesses, analysts, and investors.">
+  <meta property="twitter:title" content="Envoyou SEC API Frontend">
+  <meta property="twitter:description" content="A modern SaaS frontend for SEC Climate Disclosure compliance built with Next.js 15, TypeScript, and Tailwind CSS. Integrates with Envoyou SEC API for emissions calculation, EPA validation, and SEC export.">
     <meta property="twitter:image" content="https://www.envoyou.com/public/www.envoyou.com.png">
 
     <!-- Load CSS normally -->
@@ -50,33 +50,38 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
     <!-- PWA Manifest is automatically injected by Vite PWA plugin -->
 
+    <!-- google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=explicit" async defer></script>
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Envoyou API",
-      "description": "Unified API access to standardized global environmental datasets for ESG businesses, analysts, and investors. Make data-driven decisions with confidence.",
-      "url": "https://www.envoyou.com",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "Envoyou",
-        "url": "https://www.envoyou.com"
-      },
-      "featureList": [
-        "Global Environmental Data Access",
-        "ESG Compliance Support",
-        "Real-time Data Verification",
-        "RESTful API Design",
-        "JSON Response Format"
-      ]
+      "name": "Envoyou SEC API Frontend",
+        "description": "A modern SaaS frontend for SEC Climate Disclosure compliance built with Next.js 15, TypeScript, and Tailwind CSS. This frontend connects to the Envoyou SEC API backend for greenhouse gas emissions calculation, EPA validation, and SEC filing export.",
+        "url": "https://www.envoyou.com",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "Envoyou",
+          "url": "https://www.envoyou.com"
+        },
+        "featureList": [
+          "SEC Calculator for Scope 1 & 2 emissions",
+          "EPA Validation and cross-checking",
+          "SEC Export (JSON/CSV filing packages)",
+          "Audit Trail and forensic-grade traceability",
+          "Modern UI with Next.js + Tailwind CSS",
+          "Supabase authentication and role-based access",
+          "Responsive design for dashboard and mobile"
+        ]
     }
     </script>
 
@@ -87,5 +92,45 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+        // Ambil Site Key dari environment variable
+        const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
+        // Fungsi ini akan dipanggil saat tombol di-klik
+        async function handleFormSubmit() {
+            if (!grecaptcha) {
+                console.error("reCAPTCHA script not loaded");
+                return;
+            }
+
+            grecaptcha.enterprise.ready(async () => {
+                try {
+                    const token = await grecaptcha.enterprise.execute(siteKey, { action: 'LOGIN' });
+                    
+                    // Kirim token ke backend untuk verifikasi
+                    const response = await fetch('https://api.envoyou.com/verify-recaptcha', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ recaptchaToken: token })
+                    });
+                    
+                    const result = await response.json();
+
+                    if (result.success) {
+                        console.log("Verification successful:", result);
+                        // Lanjutkan submit form atau login
+                    } else {
+                        console.error("Verification failed.");
+                    }
+                } catch (error) {
+                    console.error("Error during reCAPTCHA verification:", error);
+                }
+            });
+        }
+        
+        // Contoh: membuat fungsi ini bisa diakses secara global atau di-attach ke tombol
+        // Anda mungkin akan mengintegrasikan ini di dalam komponen React/Vue Anda
+        window.handleFormSubmit = handleFormSubmit;
+    </script>
   </body>
 </html>
