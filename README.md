@@ -126,7 +126,6 @@ src/
 │   ├── ErrorBoundary.jsx         # Error handling component
 │   ├── Header.jsx               # Navigation header
 │   ├── Footer.jsx               # Site footer
-│   ├── HeroSection.jsx          # Hero/landing section
 │   ├── FeaturesSection.jsx      # Features showcase
 │   ├── PricingSection.jsx       # Pricing plans
 │   ├── CodeExampleSection.jsx   # API examples
@@ -138,7 +137,6 @@ src/
 │   └── BackToTop.jsx            # Back to top button
 ├── pages/
 │   ├── HomePage.jsx             # Main landing page
-│   ├── DocumentationPage.jsx    # API documentation
 │   ├── AboutPage.jsx            # About us page
 │   ├── ContactPage.jsx          # Contact page
 │   └── FreeAPIKeyPage.jsx       # API key registration

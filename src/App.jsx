@@ -12,7 +12,6 @@ import { ToastProvider } from './components/Toast';
 
 // Lazy load pages for better performance
 import HomePage from './pages/HomePage';
-const DocumentationPage = lazy(() => import('./pages/DocumentationPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const PricingPage = lazy(() => import('./pages/PricingPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -122,7 +121,6 @@ function App() {
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/features" element={<FeaturesPage />} />
-                  <Route path="/documentation" element={<DocumentationPage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/pricing" element={<PricingPage />} />
                   <Route path="/contact" element={<ContactPage />} />

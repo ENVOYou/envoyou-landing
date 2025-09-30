@@ -30,7 +30,6 @@ const Header = () => {
     const navigationLinks = [
         { name: 'Features', href: null, to: '/features', isButton: false },
         { name: 'Pricing', href: null, to: '/pricing', isButton: false },
-        { name: 'Docs', href: 'https://docs.envoyou.com/', to: null, isButton: false },
         { name: 'Test API', href: null, to: '/test', isButton: false },
         { name: 'About', href: null, to: '/about', isButton: false },
         { name: 'Contact', href: null, to: '/contact', isButton: false },

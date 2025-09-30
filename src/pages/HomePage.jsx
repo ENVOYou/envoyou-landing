@@ -14,7 +14,7 @@ const HomePage = () => {
     };
 
     const handleViewDocumentation = () => {
-        window.location.href = '/documentation';
+        window.location.href = 'https://docs.envoyou.com';
     };
 
     return (
