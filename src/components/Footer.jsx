@@ -9,16 +9,14 @@ const Footer = () => {
           {/* Left Section: Logo & Tagline */}
           <div>
             <h3 className="text-lg font-bold text-white">Envoyou</h3>
-            <p className="mt-1 text-slate-400">Empowering sustainable decisions with data.</p>
+            <p className="mt-1 text-slate-400">Auditable climate reporting for public companies.</p>
           </div>
 
           {/* Navigation Section */}
           <div className="flex flex-col space-y-2">
             <h4 className="font-semibold text-white mb-2">Navigation</h4>
             <Link to="https://docs.envoyou.com/" className="text-slate-400 hover:text-white transition-colors">Documentation</Link>
-            <Link to="/pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</Link>
-            <Link to="/about" className="text-slate-400 hover:text-white transition-colors">About</Link>
-            <Link to="/contact" className="text-slate-400 hover:text-white transition-colors">Contact</Link>
+            <a href="/#pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</a>
           </div>
 
           {/* Legal Links */}
@@ -26,8 +24,8 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-2">Legal</h4>
             <Link to="/legal/terms" className="text-slate-400 hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/legal/privacy" className="text-slate-400 hover:text-white transition-colors">Privacy Policy</Link>
-            <a href="https://github.com/hk-dev13/ENVOYou-page/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">License</a>
-            <a href="https://github.com/hk-dev13/project-permit-api" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">Contribute</a>
+            <a href="https://github.com/ENVOYou/envoyou-landing/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">License</a>
+            <a href="https://github.com/ENVOYou/envoyou-sec-api" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">Contribute</a>
           </div>
 
           {/* Right Section: Social Media */}

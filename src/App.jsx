@@ -12,14 +12,8 @@ import { ToastProvider } from './components/Toast';
 
 // Lazy load pages for better performance
 import HomePage from './pages/HomePage';
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const PricingPage = lazy(() => import('./pages/PricingPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const FreeAPIKeyPage = lazy(() => import('./pages/FreeAPIKeyPage'));
-const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
 const TermsOfServicePage = lazy(() => import('./pages/legal/TermsOfServicePage'));
 const PrivacyPolicyPage = lazy(() => import('./pages/legal/PrivacyPolicyPage'));
-const TestPage = lazy(() => import('./pages/TestPage'));
 
 // Loading component for Suspense fallback
 const PageLoader = () => (
@@ -120,18 +114,10 @@ function App() {
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<HomePage />} />
-                  <Route path="/features" element={<FeaturesPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/pricing" element={<PricingPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/free-api-key" element={<FreeAPIKeyPage />} />
                   
                   {/* Legal pages */}
                   <Route path="/legal/terms" element={<TermsOfServicePage />} />
                   <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
-                  
-                  {/* Test page */}
-                  <Route path="/test" element={<TestPage />} />
                 </Routes>
               </Suspense>
             </main>
@@ -148,24 +134,4 @@ function App() {
   );
 }
 
-export default function AppWrapper() {
-  try {
-    return App();
-  } catch (error) {
-    console.error('App wrapper error:', error);
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900">
-        <div className="text-center text-white">
-          <h1 className="text-2xl font-bold mb-4">Application Error</h1>
-          <p className="text-red-400 mb-4">{error.message}</p>
-          <button 
-            onClick={() => window.location.reload()} 
-            className="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded"
-          >
-            Reload Page
-          </button>
-        </div>
-      </div>
-    );
-  }
-}
+export default App;

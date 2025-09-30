@@ -48,7 +48,7 @@ const CodeExampleSection = () => {
                     <div data-aos="fade-up" data-aos-delay="200">
                         <div className="bg-[#0D1117] rounded-xl border border-slate-800 overflow-hidden">
                             <div className="px-4 py-2 border-b border-slate-800 flex justify-between items-center">
-                                <span className="text-sm text-slate-400">Example: Get emissions data</span>
+                                <span className="text-sm text-slate-400">Example: Calculate emissions</span>
                                                                 <button
                                   id="copyBtn"
                                   onClick={handleCopy}
@@ -66,9 +66,24 @@ const CodeExampleSection = () => {
                                     <span id="copyBtnText">{copyButtonText}</span>
                                 </button>
                             </div>
-                            <pre className="p-6 text-sm overflow-x-auto" id="codeBlock"><code className="language-bash"><span className="text-pink-400">curl</span> <span className="text-sky-300">-X</span> GET \
-  <span className="text-sky-300">-H</span> <span className="text-emerald-300">"Authorization: Bearer &lt;YOUR_API_KEY&gt;"</span> \
-  <span className="text-slate-100">"https://api.envoyou.com/v1/global/cevs/CompanyName"</span></code></pre>
+                            <pre className="p-6 text-sm overflow-x-auto" id="codeBlock"><code className="language-bash">
+    {`curl -X POST \\
+      -H "Authorization: Bearer <YOUR_API_KEY>" \\
+      -H "Content-Type: application/json" \\
+      -d '{
+        "company": "Your Company Name",
+        "scope1": {
+          "fuel_type": "natural_gas",
+          "amount": 1000,
+          "unit": "mmbtu"
+        },
+        "scope2": {
+          "kwh": 500000,
+          "grid_region": "WECC"
+        }
+      }' \\
+      "https://api.envoyou.com/v1/emissions/calculate"`}
+                            </code></pre>
                         </div>
                     </div>
                 </div>

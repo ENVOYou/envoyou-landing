@@ -275,44 +275,15 @@ class APIService {
 
   // --- Environmental Data Methods ---
 
-  async getPermits(params = {}) {
-    return this.get('/v1/permits', { params });
-  }
-
-  async searchPermits(query, params = {}) {
-    return this.get('/v1/permits/search', { params: { q: query, ...params } });
-  }
-
-  async getActivePermits() {
-    return this.get('/v1/permits/active');
-  }
-
-  async getPermitsByCompany(companyName) {
-    return this.get(`/v1/permits/company/${encodeURIComponent(companyName)}`);
-  }
-
-  async getPermitsByType(permitType) {
-    return this.get(`/v1/permits/type/${encodeURIComponent(permitType)}`);
-  }
-
-  async getPermitStats() {
-    return this.get('/v1/permits/stats');
-  }
-
-  async getCEVSData(companyName, country = null, apiKey = null) {
-    if (!companyName) throw new Error('Company name is required for CEVS lookup');
-    
-    const params = {};
-    if (country) params.country = country;
-
-    const headers = apiKey ? { 'X-API-Key': apiKey } : {};
-    return this.get(`/v1/global/cevs/${encodeURIComponent(companyName)}`, { params, headers });
-  }
-
   async getEmissionsData(state = null, year = null, page = 1, limit = 50) {
     const params = { state, year, page, limit };
     Object.keys(params).forEach(key => params[key] == null && delete params[key]);
     return this.get('/v1/global/emissions', { params });
+  }
+
+  async calculateEmissions(calculationData, apiKey = null) {
+    const headers = apiKey ? { 'X-API-Key': apiKey } : {};
+    return this.post('/v1/emissions/calculate', calculationData, { headers });
   }
 
   async getCountries(country = null, limit = 50) {

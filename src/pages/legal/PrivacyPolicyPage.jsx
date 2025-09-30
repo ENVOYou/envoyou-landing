@@ -4,242 +4,111 @@ import { Link } from 'react-router-dom';
 function PrivacyPolicyPage() {
     return (
         <div className="min-h-screen bg-slate-950">
-            {/* Header Spacing */}
             <div className="pt-20">
                 <div className="max-w-4xl mx-auto px-6 py-12">
-                    {/* Breadcrumb */}
                     <nav className="flex items-center space-x-2 text-sm text-slate-400 mb-8">
-                        <Link to="/" className="hover:text-emerald-400 transition-colors">
-                            Home
-                        </Link>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        <Link to="/" className="hover:text-emerald-400 transition-colors">Home</Link>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                         <span className="text-white">Privacy Policy</span>
                     </nav>
 
-                    {/* Page Header */}
                     <div className="mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-4">
                             Privacy Policy
                         </h1>
                         <p className="text-xl text-slate-400 max-w-2xl">
-                            Your privacy is important to us. This policy explains how we collect, use, and protect your information when using our environmental data API.
+                            This Privacy Policy describes how Envoyou ("we," "us," or "our") collects, uses, and discloses your information when you use our SEC Climate Disclosure compliance platform (the "Service").
                         </p>
-                        <p className="text-sm text-slate-500 mt-2">
-                            Last updated: September 5, 2025
-                        </p>
+                        <p className="text-sm text-slate-500 mt-2">Last updated: September 30, 2025</p>
                     </div>
 
-                    {/* Privacy Content */}
-                    <div className="prose prose-slate prose-invert max-w-none">
-                        <div className="bg-slate-900/50 rounded-xl p-8 border border-slate-800">
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">1. Information We Collect</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We collect information you provide directly to us and information we obtain automatically when you use our services.
-                                </p>
-                                
-                                <h3 className="text-xl font-medium text-white mb-3">Information You Provide</h3>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4 mb-4">
-                                    <li><strong>Account Information:</strong> Name, email address, company name, job title</li>
-                                    <li><strong>API Usage Data:</strong> Environmental data queries, location data, ESG metrics requested</li>
-                                    <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely by our payment providers)</li>
-                                    <li><strong>Communication Data:</strong> Messages you send to our support team</li>
-                                    <li><strong>Environmental Data:</strong> Location coordinates, environmental parameters, compliance data</li>
-                                </ul>
+                    <div className="prose prose-slate prose-invert max-w-none space-y-8">
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">1. Information We Collect</h2>
+                            <p>We collect information necessary to provide and improve our Service, ensure security, and comply with legal obligations.</p>
+                            <h3 className="text-xl font-medium text-white mt-6 mb-3">a. Information You Provide to Us</h3>
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                <li><strong>Account Information:</strong> When you register for an account, we collect your name, email address, and company name.</li>
+                                <li><strong>User Input Data:</strong> To perform emissions calculations, you must provide facility-level data, which may include fuel consumption, electricity usage (kWh), and grid region. This is the core data required for the Service to function.</li>
+                                <li><strong>Communications:</strong> If you contact us directly for support or inquiries, we may receive additional information about you such as your name, email address, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</li>
+                            </ul>
+                            <h3 className="text-xl font-medium text-white mt-6 mb-3">b. Information We Collect Automatically</h3>
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                <li><strong>Log and Usage Data:</strong> We collect information related to your access to and use of the Service, including the type of browser you use, app version, access times, pages viewed, your IP address, and the page you visited before navigating to our Service.</li>
+                                <li><strong>API Usage Data:</strong> We monitor API requests to track usage, prevent abuse, and ensure service stability. This includes endpoint paths, request timestamps, and response statuses. We do not log the specific content of your API payloads.</li>
+                                <li><strong>Cookies and Similar Tracking Technologies:</strong> We use cookies to operate and administer our Site, gather usage data on our Site, and improve your experience on it. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</li>
+                            </ul>
+                        </section>
 
-                                <h3 className="text-xl font-medium text-white mb-3">Information Collected Automatically</h3>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li><strong>Usage Data:</strong> API requests, feature usage, response times</li>
-                                    <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
-                                    <li><strong>Log Data:</strong> Access times, pages viewed, actions taken</li>
-                                    <li><strong>Cookies:</strong> Session cookies, preference cookies, analytics cookies</li>
-                                </ul>
-                            </section>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">2. How We Use Your Information</h2>
+                            <p>We use the information we collect for various purposes:</p>
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                <li>To provide, operate, and maintain our Service, including calculating GHG emissions and generating reports.</li>
+                                <li>To create and manage your account, including authenticating you and sending you technical notices, updates, and security alerts.</li>
+                                <li>To improve, personalize, and expand our Service by analyzing how you and other users interact with it.</li>
+                                <li>To provide customer support and respond to your requests, questions, and feedback.</li>
+                                <li>To monitor and prevent security incidents, fraud, and other malicious activity.</li>
+                                <li>For compliance purposes, including enforcing our Terms of Service or other legal rights, or as may be required by applicable laws and regulations or requested by any judicial process or governmental agency.</li>
+                            </ul>
+                        </section>
 
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">2. How We Use Your Information</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We use the information we collect to provide, maintain, and improve our services:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li><strong>Service Delivery:</strong> Process environmental data requests and provide verification services</li>
-                                    <li><strong>Account Management:</strong> Create and maintain your account, authenticate API requests</li>
-                                    <li><strong>Communication:</strong> Send service updates, technical notices, and respond to inquiries</li>
-                                    <li><strong>Improvement:</strong> Analyze usage patterns to enhance our environmental data algorithms</li>
-                                    <li><strong>Security:</strong> Detect and prevent fraud, abuse, and security incidents</li>
-                                    <li><strong>Compliance:</strong> Meet legal obligations and enforce our terms</li>
-                                    <li><strong>Environmental Reporting:</strong> Support legitimate ESG and environmental compliance activities</li>
-                                </ul>
-                            </section>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">3. How We Share Your Information</h2>
+                            <p>We do not sell your personal information. We may share the information we collect in the following limited circumstances:</p>
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                <li><strong>Service Providers:</strong> We share information with third-party vendors and service providers that perform services on our behalf. These include:
+                                    <ul className="list-disc list-inside space-y-1 ml-6 mt-2">
+                                        <li>**Supabase:** For database hosting, storage, and user authentication. Supabase is SOC 2 compliant.</li>
+                                        <li>**Netlify:** For hosting our landing page and documentation site.</li>
+                                        <li>**Google Analytics:** To analyze website traffic and usage patterns (anonymized data).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                                <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in the good faith belief that such action is necessary to comply with a legal obligation, protect and defend our rights or property, or in urgent circumstances to protect the personal safety of users of the Service or the public.</li>
+                            </ul>
+                        </section>
 
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">3. Information Sharing and Disclosure</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We do not sell, trade, or rent your personal information. We may share your information only in these limited circumstances:
-                                </p>
-                                
-                                <h3 className="text-xl font-medium text-white mb-3">Service Providers</h3>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We work with trusted third-party providers who help us deliver our services:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4 mb-4">
-                                    <li>Cloud hosting providers (AWS, Google Cloud)</li>
-                                    <li>Payment processors (Stripe, PayPal)</li>
-                                    <li>Email service providers</li>
-                                    <li>Analytics services (anonymized data only)</li>
-                                </ul>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">4. Data Security</h2>
+                            <p>We implement a variety of security measures to maintain the safety of your personal information. Our security measures include:</p>
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                                <li>Data encryption in transit (TLS 1.3) and at rest (AES-256).</li>
+                                <li>Use of Supabase for secure authentication, including JSON Web Tokens (JWTs) and Role-Level Security.</li>
+                                <li>Regular security assessments and vulnerability scanning.</li>
+                                <li>Strict internal access controls to ensure only authorized personnel can access user data.</li>
+                            </ul>
+                        </section>
 
-                                <h3 className="text-xl font-medium text-white mb-3">Legal Requirements</h3>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We may disclose information when required by law or to protect our rights and users.
-                                </p>
-                            </section>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">5. Your Data Rights and Choices</h2>
+                            <p>You have certain rights regarding the personal information we hold about you. You may access, update, or delete your account information at any time by logging into your account settings. You may also opt-out of marketing communications by following the unsubscribe link in our emails.</p>
+                            <p>Depending on your location, you may have additional rights under local law, such as GDPR or CCPA (see below).</p>
+                        </section>
 
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">4. Data Security</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We implement comprehensive security measures to protect your information:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
-                                    <li><strong>Access Control:</strong> Strict employee access controls and regular security training</li>
-                                    <li><strong>Infrastructure:</strong> SOC 2 compliant cloud infrastructure</li>
-                                    <li><strong>Monitoring:</strong> 24/7 security monitoring and incident response</li>
-                                    <li><strong>Testing:</strong> Regular penetration testing and vulnerability assessments</li>
-                                    <li><strong>Backup:</strong> Secure, encrypted backups with geographic redundancy</li>
-                                </ul>
-                            </section>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">6. GDPR and CCPA</h2>
+                            <h3 className="text-xl font-medium text-white mt-6 mb-3">a. European Union (GDPR)</h3>
+                            <p>If you are a resident of the European Economic Area (EEA), you have the right to access, rectify, or erase your personal data, as well as the right to data portability and the right to object to our processing of your personal data.</p>
+                            <h3 className="text-xl font-medium text-white mt-6 mb-3">b. California (CCPA)</h3>
+                            <p>If you are a California resident, you have the right to know what personal information we collect, use, and disclose. You also have the right to request deletion of your personal information and to opt-out of the sale of your personal information (for the record, we do not sell your data).</p>
+                        </section>
 
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">5. Data Retention</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We retain your information only as long as necessary to provide our services and comply with legal obligations:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li><strong>Account Data:</strong> Retained while your account is active</li>
-                                    <li><strong>Environmental Data:</strong> Deleted 30 days after account closure</li>
-                                    <li><strong>Usage Logs:</strong> Retained for 12 months for security and improvement purposes</li>
-                                    <li><strong>Financial Records:</strong> Retained for 7 years for tax and legal compliance</li>
-                                </ul>
-                            </section>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">7. Children's Privacy</h2>
+                            <p>Our Service is not directed to individuals under the age of 16. We do not knowingly collect personal information from children under 16. If we become aware that a child under 16 has provided us with personal information, we will take steps to delete such information.</p>
+                        </section>
 
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">6. Your Rights and Choices</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    You have several rights regarding your personal information:
-                                </p>
-                                
-                                <h3 className="text-xl font-medium text-white mb-3">Access and Control</h3>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4 mb-4">
-                                    <li><strong>Account Settings:</strong> Update your profile and preferences anytime</li>
-                                    <li><strong>Data Export:</strong> Request a copy of your data in portable format</li>
-                                    <li><strong>Data Deletion:</strong> Delete your account and associated data</li>
-                                    <li><strong>Communication Preferences:</strong> Opt-out of marketing emails</li>
-                                </ul>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">8. Changes to This Privacy Policy</h2>
+                            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy Policy periodically for any changes.</p>
+                        </section>
 
-                                <h3 className="text-xl font-medium text-white mb-3">GDPR Rights (EU Users)</h3>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    If you're located in the European Union, you have additional rights under GDPR:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li>Right to rectification of inaccurate data</li>
-                                    <li>Right to data portability</li>
-                                    <li>Right to object to processing</li>
-                                    <li>Right to lodge complaints with supervisory authorities</li>
-                                </ul>
-                            </section>
-
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">7. Cookies and Tracking</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We use cookies and similar technologies to improve your experience:
-                                </p>
-                                
-                                <div className="bg-slate-800/50 rounded-lg p-4 mb-4">
-                                    <h4 className="text-lg font-medium text-white mb-2">Essential Cookies</h4>
-                                    <p className="text-slate-300 text-sm">
-                                        Required for basic site functionality, authentication, and security.
-                                    </p>
-                                </div>
-                                
-                                <div className="bg-slate-800/50 rounded-lg p-4 mb-4">
-                                    <h4 className="text-lg font-medium text-white mb-2">Analytics Cookies</h4>
-                                    <p className="text-slate-300 text-sm">
-                                        Help us understand how users interact with our service (anonymized).
-                                    </p>
-                                </div>
-                                
-                                <div className="bg-slate-800/50 rounded-lg p-4">
-                                    <h4 className="text-lg font-medium text-white mb-2">Preference Cookies</h4>
-                                    <p className="text-slate-300 text-sm">
-                                        Remember your settings and preferences for a better experience.
-                                    </p>
-                                </div>
-                            </section>
-
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">8. International Data Transfers</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    Our services are hosted in secure data centers. When we transfer data internationally, we ensure adequate protection through:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li>Standard Contractual Clauses approved by the European Commission</li>
-                                    <li>Adequacy decisions for certain countries</li>
-                                    <li>Additional safeguards for data protection</li>
-                                </ul>
-                            </section>
-
-                            <section className="mb-8">
-                                <h2 className="text-2xl font-semibold text-white mb-4">9. Changes to This Policy</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify you of significant changes by:
-                                </p>
-                                <ul className="list-disc list-inside text-slate-300 space-y-2 ml-4">
-                                    <li>Email notification to your registered address</li>
-                                    <li>Prominent notice on our website</li>
-                                    <li>In-app notifications for significant changes</li>
-                                </ul>
-                            </section>
-
-                            <section className="mb-0">
-                                <h2 className="text-2xl font-semibold text-white mb-4">10. Contact Us</h2>
-                                <p className="text-slate-300 leading-relaxed mb-4">
-                                    If you have questions about this Privacy Policy or our data practices, please contact us:
-                                </p>
-                                <div className="bg-slate-800/50 rounded-lg p-4 mt-4">
-                                    <p className="text-slate-300">
-                                        <strong className="text-white">Data Protection Officer:</strong> info@envoyou.com<br />
-                                        <strong className="text-white">General Inquiries:</strong> support@envoyou.com<br />
-                                        <strong className="text-white">Address:</strong> Envoyou Privacy Team<br />
-                                        <strong className="text-white">Response Time:</strong> Within 48 hours
-                                    </p>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="mt-12 flex flex-col sm:flex-row gap-4">
-                        <Link
-                            to="/legal/terms"
-                            className="inline-flex items-center justify-center px-6 py-3 border border-slate-700 text-slate-300 rounded-lg hover:bg-slate-800 hover:text-white transition-colors"
-                        >
-                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            View Terms of Service
-                        </Link>
-                        <Link
-                            to="/contact"
-                            className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors"
-                        >
-                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-4.126-.964L3 20l1.964-5.874A8.955 8.955 0 013 12a8 8 0 018-8 8 8 0 018 8z" />
-                            </svg>
-                            Contact Privacy Team
-                        </Link>
+                        <section>
+                            <h2 className="text-2xl font-semibold text-white mb-4">9. Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                            <a href="mailto:privacy@envoyou.com" className="text-emerald-400 hover:text-emerald-300">privacy@envoyou.com</a>
+                        </section>
                     </div>
                 </div>
             </div>

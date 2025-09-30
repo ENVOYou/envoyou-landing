@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { DASHBOARD_URL } from '../config/constants';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         // Handle scrolling to sections when navigating with hash
@@ -21,18 +20,18 @@ const Header = () => {
     }, [location]);
 
     const handleSectionNavigation = (sectionId) => {
-        if (location.pathname !== '/') {
-            navigate(`/#${sectionId}`);
+        const element = document.querySelector(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     // Consolidated navigation links
     const navigationLinks = [
-        { name: 'Features', href: null, to: '/features', isButton: false },
-        { name: 'Pricing', href: null, to: '/pricing', isButton: false },
-        { name: 'Test API', href: null, to: '/test', isButton: false },
-        { name: 'About', href: null, to: '/about', isButton: false },
-        { name: 'Contact', href: null, to: '/contact', isButton: false },
+        { name: 'Features', href: '#features' },
+        { name: 'Pricing', href: '#pricing' },
+        { name: 'Testimonials', href: '#testimonials' },
+        { name: 'FAQ', href: '#faq' },
     ];
 
     return (
@@ -46,39 +45,15 @@ const Header = () => {
                 />
             </Link>
             <nav className="hidden md:flex items-center space-x-8">
-                {navigationLinks.map((link) => {
-                    if (link.isButton) {
-                        return (
-                            <button
-                                key={link.name}
-                                onClick={() => handleSectionNavigation(link.href.slice(1))}
-                                className="text-slate-300 hover:text-emerald-400 transition-colors"
-                            >
-                                {link.name}
-                            </button>
-                        );
-                    }
-                    if (link.href) {
-                        return (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-slate-300 hover:text-emerald-400 transition-colors"
-                            >
-                                {link.name}
-                            </a>
-                        );
-                    }
-                    return (
-                        <Link
-                            key={link.name}
-                            to={link.to}
-                            className="text-slate-300 hover:text-emerald-400 transition-colors"
-                        >
-                            {link.name}
-                        </Link>
-                    );
-                })}
+                {navigationLinks.map((link) => (
+                    <button
+                        key={link.name}
+                        onClick={() => handleSectionNavigation(link.href)}
+                        className="text-slate-300 hover:text-emerald-400 transition-colors"
+                    >
+                        {link.name}
+                    </button>
+                ))}
             </nav>
             
             {/* Mobile menu button */}
@@ -125,44 +100,18 @@ const Header = () => {
         {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-md border-t border-slate-700">
                 <nav className="flex flex-col p-4 space-y-4">
-                    {navigationLinks.map((link) => {
-                        if (link.isButton) {
-                            return (
-                                <button
-                                    key={link.name}
-                                    onClick={() => {
-                                        handleSectionNavigation(link.href.slice(1));
-                                        setIsMenuOpen(false);
-                                    }}
-                                    className="text-slate-300 hover:text-emerald-400 transition-colors text-left"
-                                >
-                                    {link.name}
-                                </button>
-                            );
-                        }
-                        if (link.href) {
-                            return (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-slate-300 hover:text-emerald-400 transition-colors"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </a>
-                            );
-                        }
-                        return (
-                            <Link
-                                key={link.name}
-                                to={link.to}
-                                className="text-slate-300 hover:text-emerald-400 transition-colors"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {link.name}
-                            </Link>
-                        );
-                    })}
+                    {navigationLinks.map((link) => (
+                        <button
+                            key={link.name}
+                            onClick={() => {
+                                handleSectionNavigation(link.href);
+                                setIsMenuOpen(false);
+                            }}
+                            className="text-slate-300 hover:text-emerald-400 transition-colors text-left"
+                        >
+                            {link.name}
+                        </button>
+                    ))}
                     {/* Mobile CTA */}
                     <div className="border-t border-slate-700 pt-4 mt-4 space-y-4">
                         <a
