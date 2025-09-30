@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 import CevsCalculator from '../components/CevsCalculator';
 import InfoCard from '../components/InfoCard';
-import { CheckCircle, Shield, TrendingUp, Users, Code, Database } from 'lucide-react';
+import { CheckCircle, Shield, TrendingUp, Users, Code, Database, FileText, GitBranch, Layers } from 'lucide-react';
 
 const HomePage = () => {
     console.log('🏠 HomePage component is rendering');
@@ -76,8 +76,62 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* SEC Calculator Section */}
+            {/* Key Features Section */}
             <section className="py-20" style={{ backgroundColor: 'var(--envoyou-dark-light)' }}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl font-bold" style={{ color: 'var(--envoyou-white)' }}>
+                            Built for Forensic-Grade Compliance
+                        </h2>
+                        <p className="mt-4 text-lg max-w-3xl mx-auto" style={{ color: 'var(--envoyou-gray)' }}>
+                            Our platform provides the tools you need for auditable, transparent, and efficient SEC reporting.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {[
+                            {
+                                icon: <TrendingUp className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'GHG Emissions Calculator',
+                                description: 'Calculate Scope 1 & 2 emissions using up-to-date factors from EPA and other verified sources.',
+                            },
+                            {
+                                icon: <GitBranch className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'Complete Audit Trail',
+                                description: 'Every calculation, input, and data source is versioned and timestamped for forensic-grade traceability.',
+                            },
+                            {
+                                icon: <CheckCircle className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'EPA Cross-Validation',
+                                description: 'Automatically compare your results against public EPA data to detect anomalies and ensure accuracy.',
+                            },
+                            {
+                                icon: <FileText className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'SEC-Ready Exports',
+                                description: 'Generate 10-K friendly disclosure packages in JSON, CSV, and Excel formats with a single API call.',
+                            },
+                            {
+                                icon: <Shield className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'Robust Security',
+                                description: 'Secure your data with Supabase JWT authentication and role-based access control for audit endpoints.',
+                            },
+                            {
+                                icon: <Layers className="h-8 w-8 mb-4" style={{ color: 'var(--envoyou-green)' }} />,
+                                title: 'Developer-First API',
+                                description: 'Integrate climate compliance directly into your systems with a clean, well-documented REST API.',
+                            },
+                        ].map((feature, index) => (
+                            <div key={index} className="p-8 rounded-lg" style={{ backgroundColor: 'var(--envoyou-dark)' }}>
+                                {feature.icon}
+                                <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--envoyou-white)' }}>{feature.title}</h3>
+                                <p style={{ color: 'var(--envoyou-gray)' }}>{feature.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* SEC Calculator Section */}
+            <section className="py-20" style={{ backgroundColor: 'var(--envoyou-dark)' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--envoyou-white)' }}>
